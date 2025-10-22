@@ -1,11 +1,41 @@
+/* =======================
+   Global Reset & Base Styles
+   ======================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap');
+
+html, body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+   
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* Theme colors */
+  --cyan: cyan;
+  --purple: purple;
+
+  /* Dark mode by default */
+  background-color: #000;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,28 +43,41 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background-color: #000; /* Match hero */
+  color: rgba(255, 255, 255, 0.87);
+  font-family: inherit;
+}
+
+/* =======================
+   Typography
+   ======================= */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #fff;
+}
+
+p {
+  color: #ccc;
+}
+
+/* =======================
+   Links
+   ======================= */
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: var(--cyan);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+
 a:hover {
-  color: #535bf2;
+  color: var(--purple);
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/* =======================
+   Buttons
+   ======================= */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -44,25 +87,35 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.3s ease;
 }
 
+button:hover {
+  border-color: var(--cyan);
+  background-color: #111;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto var(--cyan);
+}
+
+/* =======================
+   Light Mode Support
+   ======================= */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
     background-color: #ffffff;
+    color: #213547;
+  }
+  a {
+    color: #646cff;
   }
   a:hover {
     color: #747bff;
   }
   button {
     background-color: #f9f9f9;
+    color: #213547;
   }
 }

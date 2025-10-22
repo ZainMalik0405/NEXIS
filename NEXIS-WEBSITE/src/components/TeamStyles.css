@@ -1,0 +1,104 @@
+/* ===== Background gradient phases for each section ===== */
+.bg-phase1 {
+  background: linear-gradient(270deg, #0a0f1a, #001f3f, #0a0f1a);
+  background-size: 400% 400%;
+  animation: gradientShift1 20s ease infinite;
+}
+
+.bg-phase2 {
+  background: linear-gradient(270deg, #0d1b2a, #1a2a4f, #0d1b2a);
+  background-size: 400% 400%;
+  animation: gradientShift2 20s ease infinite;
+}
+
+.bg-phase3 {
+  background: linear-gradient(270deg, #1a0f2f, #2a1f4f, #1a0f2f);
+  background-size: 400% 400%;
+  animation: gradientShift3 20s ease infinite;
+}
+
+/* ===== Gradient shift animations ===== */
+@keyframes gradientShift1 {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes gradientShift2 {
+  0% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes gradientShift3 {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+}
+
+/* ===== Floating particles layer ===== */
+.particles {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: particleDrift 60s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes particleDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+/* ===== Avatar glow pulse ===== */
+.avatar-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.avatar-glow:hover {
+  animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px rgba(0,229,255,0.4), 0 0 20px rgba(155,92,255,0.3); }
+  50% { box-shadow: 0 0 20px rgba(0,229,255,0.8), 0 0 40px rgba(155,92,255,0.6); }
+  100% { box-shadow: 0 0 10px rgba(0,229,255,0.4), 0 0 20px rgba(155,92,255,0.3); }
+}
+
+/* ===== Card shimmer effect ===== */
+.team-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.15),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.team-card:hover::after {
+  animation: shimmer 1.5s ease forwards;
+}
+
+@keyframes shimmer {
+  100% { left: 125%; }
+}
+
+/* ===== Utility: ensure sections have relative positioning for particles ===== */
+.team-section {
+  position: relative;
+  overflow: hidden;
+}

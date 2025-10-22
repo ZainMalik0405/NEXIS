@@ -122,10 +122,10 @@ export default function About() {
                 />
               </Stack>
 
-              {/* Stats with animated counters */}
+              {/* Stats with animated counters - Fixed for very small screens */}
               <Stack
-                direction="row"
-                spacing={3}
+                direction={{ xs: "column", sm: "row" }}
+                spacing={{ xs: 2, sm: 3 }}
                 flexWrap="wrap"
                 divider={
                   <Divider
@@ -197,11 +197,19 @@ function Domain({ icon, title, text }) {
 
 function Stat({ number, suffix, label }) {
   return (
-    <Stack spacing={0.2} minWidth={100}>
+    <Stack 
+      spacing={0.2} 
+      minWidth={100}
+      sx={{
+        // Fix for very small screens
+        minWidth: { xs: '80px', sm: '100px' },
+        textAlign: { xs: 'center', sm: 'left' }
+      }}
+    >
       <Typography
         sx={{
           fontFamily: "Space Grotesk, sans-serif",
-          fontSize: "1.6rem",
+          fontSize: { xs: "1.4rem", sm: "1.6rem" },
           fontWeight: 700,
           background: "linear-gradient(90deg, #00e5ff, #9b5cff)",
           WebkitBackgroundClip: "text",
@@ -218,7 +226,11 @@ function Stat({ number, suffix, label }) {
           scrollSpyOnce
         />
       </Typography>
-      <Typography sx={{ color: "text.secondary", fontSize: 14, wordBreak: "break-word" }}>
+      <Typography sx={{ 
+        color: "text.secondary", 
+        fontSize: { xs: 12, sm: 14 },
+        wordBreak: "break-word" 
+      }}>
         {label}
       </Typography>
     </Stack>

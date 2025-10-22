@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -6,11 +6,77 @@ import {
   Typography,
   TextField,
   Button,
+  Alert,
+  Snackbar
 } from "@mui/material";
 import { motion } from "framer-motion";
 import video from "../assets/contact.mp4";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [alert, setAlert] = useState({ open: false, message: "", severity: "success" });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Validate form
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setAlert({
+        open: true,
+        message: "Please fill in all fields",
+        severity: "error"
+      });
+      return;
+    }
+
+    // Format the message for WhatsApp
+    const whatsappMessage = `
+*New Contact Form Submission*
+
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Message:* ${formData.message}
+
+*Sent via Website Contact Form*
+    `.trim();
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // WhatsApp URL with phone number and message
+    const whatsappUrl = `https://wa.me/923311212303?text=${encodedMessage}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success message
+    setAlert({
+      open: true,
+      message: "Opening WhatsApp with your message...",
+      severity: "success"
+    });
+
+    // Optional: Reset form after submission
+    setFormData({
+      name: "",
+      email: "",
+      message: ""
+    });
+  };
+
+  const handleCloseAlert = () => {
+    setAlert({ ...alert, open: false });
+  };
+
   return (
     <Box
       component="section"
@@ -25,6 +91,22 @@ export default function Contact() {
         alignItems: "center",
       }}
     >
+      {/* Alert Snackbar */}
+      <Snackbar 
+        open={alert.open} 
+        autoHideDuration={6000} 
+        onClose={handleCloseAlert}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <Alert 
+          onClose={handleCloseAlert} 
+          severity={alert.severity}
+          sx={{ width: '100%' }}
+        >
+          {alert.message}
+        </Alert>
+      </Snackbar>
+
       {/* Video Background */}
       <Box
         component="video"
@@ -100,12 +182,13 @@ export default function Contact() {
               }}
             >
               Have a question or want to collaborate? Fill out the form below and
-              we'll get back to you shortly.
+              we'll connect via WhatsApp.
             </Typography>
           </motion.div>
 
           {/* Contact Form */}
           <motion.form
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -123,8 +206,12 @@ export default function Contact() {
             <Stack spacing={3}>
               <TextField
                 label="Your Name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
                 variant="outlined"
                 fullWidth
+                required
                 InputLabelProps={{
                   style: { 
                     color: "rgba(255,255,255,0.7)",
@@ -154,8 +241,13 @@ export default function Contact() {
               />
               <TextField
                 label="Email Address"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 variant="outlined"
                 fullWidth
+                required
+                type="email"
                 InputLabelProps={{
                   style: { 
                     color: "rgba(255,255,255,0.7)",
@@ -185,10 +277,14 @@ export default function Contact() {
               />
               <TextField
                 label="Message"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
                 variant="outlined"
                 fullWidth
                 multiline
                 rows={4}
+                required
                 InputLabelProps={{
                   style: { 
                     color: "rgba(255,255,255,0.7)",
@@ -256,8 +352,22 @@ export default function Contact() {
                   },
                 }}
               >
-                Send Message
+                Send via WhatsApp
               </Button>
+
+              {/* WhatsApp Info */}
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "rgba(255,255,255,0.6)",
+                  textAlign: "center",
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: "0.9rem",
+                  mt: 1,
+                }}
+              >
+                Your message will open in WhatsApp to send to +92 331 1212303
+              </Typography>
             </Stack>
           </motion.form>
         </Stack>

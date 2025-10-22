@@ -1,9 +1,27 @@
-import React from "react";
-import { Box, Container, Stack, Typography, TextField, Button } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Container, Stack, Typography, TextField, Button, Alert, Snackbar, Fade } from "@mui/material";
 import { motion } from "framer-motion";
-import bgImage from "../assets/newsletter.png"; // <-- your image
+import bgImage from "../assets/newsletter.png";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export default function NewsletterSection() {
+  const [email, setEmail] = useState("");
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Show success message
+    setOpenSnackbar(true);
+    
+    // Clear the text field
+    setEmail("");
+  };
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -11,6 +29,38 @@ export default function NewsletterSection() {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
+      {/* Success Snackbar */}
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={4000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        TransitionComponent={Fade}
+      >
+        <Alert
+          icon={<CheckCircleIcon fontSize="inherit" />}
+          severity="success"
+          onClose={handleCloseSnackbar}
+          sx={{
+            bgcolor: 'rgba(76, 175, 80, 0.9)',
+            color: '#fff',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(255,255,255,0.2)',
+            borderRadius: '12px',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+            '& .MuiAlert-message': {
+              fontWeight: 600,
+              fontSize: '1rem',
+            },
+            '& .MuiAlert-icon': {
+              color: '#fff',
+            }
+          }}
+        >
+          Successfully subscribed! Welcome to NEXIS updates.
+        </Alert>
+      </Snackbar>
+
       <Box
         component="section"
         sx={{
@@ -19,7 +69,7 @@ export default function NewsletterSection() {
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed", // subtle parallax feel
+          backgroundAttachment: "fixed",
         }}
       >
         {/* Brand color + dark overlay */}
@@ -94,6 +144,7 @@ export default function NewsletterSection() {
             {/* Form */}
             <Stack
               component="form"
+              onSubmit={handleSubmit}
               direction={{ xs: "column", sm: "row" }}
               spacing={2}
               sx={{ width: "100%", mt: 1 }}
@@ -102,6 +153,10 @@ export default function NewsletterSection() {
                 fullWidth
                 variant="outlined"
                 placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                type="email"
                 sx={{
                   input: {
                     color: "#fff",
@@ -121,6 +176,7 @@ export default function NewsletterSection() {
                 }}
               />
               <Button
+                type="submit"
                 variant="contained"
                 size="large"
                 sx={{

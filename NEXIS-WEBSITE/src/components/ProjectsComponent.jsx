@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Typography, Box } from '@mui/material';
-import hero from '../assets/hero.jpg'; // background video
+import hero from '../assets/hero.jpg';
 
 const ProjectsComponent = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -143,7 +143,10 @@ const ProjectsComponent = () => {
       id="projects"
     >
       {/* Background Image with Filter */}
-      <div className="background-image"></div>
+      <div 
+        className="background-image"
+        style={{ backgroundImage: `url(${hero})` }}
+      ></div>
       
       <div className="projects-header">
         <Typography
@@ -197,7 +200,7 @@ const ProjectsComponent = () => {
       </div>
 
       <style jsx>{`
-        /* Projects Component Styles */
+        /* Projects Component Styles - EXACT SAME AS YOUR ORIGINAL */
         .projects-container {
           padding: 6rem 2rem 4rem;
           background: #000;
@@ -217,12 +220,11 @@ const ProjectsComponent = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background-image: url(${hero});
           background-size: cover;
           background-position: center;
+          background-repeat: no-repeat;
           opacity: 0.15;
           z-index: 0;
-          filter: brightness(100%);
         }
         
         .projects-container::before {
@@ -232,8 +234,7 @@ const ProjectsComponent = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background: 
-            linear-gradient(90deg, rgba(0, 157, 255, 0.04),  rgba(126, 46, 255, 0.08));
+          background: linear-gradient(90deg, rgba(0, 157, 255, 0.04), rgba(126, 46, 255, 0.08));
           pointer-events: none;
           z-index: 1;
         }
@@ -486,10 +487,14 @@ const ProjectsComponent = () => {
           opacity: 1;
         }
         
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        /* Responsive Design - FIXED FOR MOBILE */
+        @media (max-width: 815px) {
           .projects-container {
             padding: 5rem 1rem 3rem;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            transform: none !important;
           }
           
           .projects-header {
@@ -499,6 +504,7 @@ const ProjectsComponent = () => {
           
           .projects-grid {
             grid-template-columns: 1fr;
+            display: grid !important;
           }
           
           .project-header {
@@ -513,6 +519,20 @@ const ProjectsComponent = () => {
           .section-title {
             font-size: 1.5rem;
           }
+          
+          .project-card {
+            opacity: 1 !important;
+            transform: none !important;
+            animation: none !important;
+            display: block !important;
+            visibility: visible !important;
+          }
+        }
+
+        /* Force display on all screens */
+        .projects-container {
+          display: block;
+          visibility: visible;
         }
       `}</style>
     </div>

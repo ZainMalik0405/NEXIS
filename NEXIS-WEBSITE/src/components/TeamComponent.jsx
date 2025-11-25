@@ -1,6 +1,31 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Typography, Box } from '@mui/material';
-import hero from '../assets/hero.jpg'; 
+import hero from '../assets/hero.jpg';
+
+// Core Team Images
+import drSaimaZafar from '../assets/73 - Dr. Saima Zafar.JPG';
+import drAliHammadAkbar from '../assets/Dr. Ali Hammad Akbar.png';
+import drMuhammadAkmal from '../assets/Dr. M. Akmal.JPG';
+import drMuhammadNaeem from '../assets/Dr. M. Naeem.jpg';
+
+// Researchers Images
+import drShafiqueAhmed from '../assets/Dr. Shafique Ahmed Chaudhry.jfif';
+import drNasimUllah from '../assets/Dr. Nasim Ullah.webp';
+import khalidIjaz from '../assets/Khalid Ijaz.png';
+import abeerBashir from '../assets/Abeer Bashir.png';
+import umerAltaf from '../assets/Umer Altaf.JPG';
+import saraKiran from '../assets/Sara Kiran.jfif';
+
+// Student Contributors Images
+import ferozAhmedMian from '../assets/Feroz Ahmed Mian.png';
+import syedFaseeh from '../assets/Syed Faseeh.jpeg';
+import chaudhryFahadAli from '../assets/Chaudhry Fahad Ali.jfif';
+import khushbakhtMunir from '../assets/Khushbakht Munir.png';
+import hiraKhalid from '../assets/Hira Khalid.jfif';
+
+// Developer Images
+import zainMalik from '../assets/zain.jpg';
+import zainabShahzad from '../assets/zainab.jpg'; 
 
 const TeamComponent = () => {
   const [activeTab, setActiveTab] = useState('core');
@@ -34,25 +59,25 @@ const TeamComponent = () => {
       name: "Dr. Saima Zafar",
       role: "Director and Principal Investigator (PI)",
       expertise: "Leading research in Internet of Things, Healthcare Informatics, & Energy Informatics",
-      img: require('../assets/73 - Dr. Saima Zafar.JPG'),
+      img: drSaimaZafar,
     },
     {
       name: "Dr. Ali Hammad Akbar",
       role: "Collaborator and Co PI",
       expertise: "Wireless Sensor Networks, Emergency Management, Urban Sprawl",
-      img: require('../assets/Dr. Ali Hammad Akbar.png'),
+      img: drAliHammadAkbar,
     },
     {
       name: "Dr. Muhammad Akmal",
       role: "Co-PI",
       expertise: "Biomedical applications of Artificial Intelligence and Machine Learning, Healthcare Informatics",
-      img: require('../assets/Dr. M. Akmal.JPG'),
+      img: drMuhammadAkmal,
     },
     {
       name: "Dr. Muhammad Naeem",
       role: "Co-PI",
       expertise: "Renewable Energy Systems, Energy Informatics",
-      img: require('../assets/Dr. M. Naeem.jpg'),
+      img: drMuhammadNaeem,
     },
   ];
 
@@ -63,20 +88,20 @@ const TeamComponent = () => {
       role: "Research Collaborator",
       expertise:
         "Associate Professor, Clarkson University, USA | Internet of Things, Machine Learning, Cyber Physical Systems",
-      img: require('../assets/Dr. Shafique Ahmed Chaudhry.jfif'),
+      img: drShafiqueAhmed,
     },
     {
       name: "Dr. Nasim Ullah",
       role: "Research Collaborator",
       expertise:
         "Renewable Energy Harvesting, Smart Grids, Hybrid Intelligent Transformers",
-      img: require('../assets/Dr. Nasim Ullah.webp'),
+      img: drNasimUllah,
     },
     {
       name: "Mr. Khalid Ijaz",
       role: "Researcher",
       expertise: "Artificial Intelligence, Machine Learning, Computer Vision",
-      img: require('../assets/Khalid Ijaz.png'),
+      img: khalidIjaz,
     },
     {
       name: "Ms. Amna Ehsan",
@@ -88,19 +113,19 @@ const TeamComponent = () => {
       name: "Ms. Abeer Bashir",
       role: "PhD Student",
       expertise: "Healthcare Informatics",
-      img: require('../assets/Abeer Bashir.png'),
+      img: abeerBashir,
     },
     {
       name: "Mr. Umer Altaf",
       role: "PhD Student",
       expertise: "Machine Learning for Embedded Systems",
-      img: require('../assets/Umer Altaf.JPG'),
+      img: umerAltaf,
     },
     {
       name: "Ms. Sara Kiran",
       role: "PhD Student",
       expertise: "",
-      img: require('../assets/Sara Kiran.jfif'),
+      img: saraKiran,
     },
   ];
 
@@ -110,31 +135,31 @@ const TeamComponent = () => {
       name: "Feroz Ahmed Mian",
       role: "PhD Student, UMass Amherst",
       expertise: "SoC-based implementation of Machine Learning algorithms",
-      img: require('../assets/Feroz Ahmed Mian.png'),
+      img: ferozAhmedMian,
     },
     {
       name: "Syed Faseeh Ul Hasan",
       role: "Web Developer & SEO specialist, CBS Automotive, Cambridge, UK",
       expertise: "Blockchain",
-      img: require('../assets/Syed Faseeh.jpeg'),
+      img: syedFaseeh,
     },
     {
       name: "Chaudhry Fahad Ali",
       role: "PCP National Coordinator UNIDO",
       expertise: "Energy Management Systems",
-      img: require('../assets/Chaudhry Fahad Ali.jfif'),
+      img: chaudhryFahadAli,
     },
     {
       name: "Khushbakht Munir",
       role: "Co-Chair, Women in Energy Pakistan",
       expertise: "Blockchain and Internet of Things",
-      img: require('../assets/Khushbakht Munir.png'),
+      img: khushbakhtMunir,
     },
     {
       name: "Hira Khalid",
       role: "Research Assistant, Sultan Qaboos University",
       expertise: "Free Space Optical Networks",
-      img: require('../assets/Hira Khalid.jfif'),
+      img: hiraKhalid,
     },
     {
       name: "Usman Ayub",
@@ -148,7 +173,7 @@ const TeamComponent = () => {
   const renderImage = (img, name, size) => {
     if (img) {
       return (
-        <img src={typeof img === 'string' ? img : img.default} alt={name} className="member-image" />
+        <img src={img} alt={name} className="member-image" />
       );
     }
     const letter = name[0];
@@ -279,24 +304,73 @@ const TeamComponent = () => {
         
         {activeTab === 'developer' && (
           <div className="developer-section">
-            <div className="developer-card">
-              <div className="developer-content">
-                <div className="developer-image-container">
-                  <img 
-                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-                    alt="Zain Malik" 
-                    className="developer-image" 
-                  />
+            <div className="developers-grid">
+              {/* Zain Malik */}
+              <div className="developer-card">
+                <div className="developer-content">
+                  <div className="developer-image-container">
+                    <img 
+                      src={zainMalik} 
+                      alt="Zain Malik" 
+                      className="developer-image" 
+                    />
+                  </div>
+                  <div className="developer-info">
+                    <h3 className="developer-name">Muhammad Zain Malik</h3>
+                    <p className="developer-role">Full Stack Developer</p>
+                    <p className="developer-desc">Backend architecture, frontend development, and system design</p>
+                    <div className="skills">
+                      <span className="skill-tag">MERN</span>
+                      <span className="skill-tag">FastAPI</span>
+                      <span className="skill-tag">Website Development</span>
+                      <span className="skill-tag">Mobile Apps</span>
+                    </div>
+                    <a 
+                      href="https://www.linkedin.com/in/muhammad-zain-malik-4a5079266?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="linkedin-button"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                      LinkedIn Profile
+                    </a>
+                  </div>
                 </div>
-                <div className="developer-info">
-                  <h3 className="developer-name">Zain Malik</h3>
-                  <p className="developer-role">Website Developer</p>
-                  <p className="developer-desc">Crafted with React, passion, and attention to detail</p>
-                  <div className="skills">
-                    <span className="skill-tag">React</span>
-                    <span className="skill-tag">JavaScript</span>
-                    <span className="skill-tag">CSS3</span>
-                    <span className="skill-tag">UI/UX</span>
+              </div>
+
+              {/* Zainab Shahzad */}
+              <div className="developer-card">
+                <div className="developer-content">
+                  <div className="developer-image-container">
+                    <img 
+                      src={zainabShahzad} 
+                      alt="Zainab Shahzad" 
+                      className="developer-image" 
+                    />
+                  </div>
+                  <div className="developer-info">
+                    <h3 className="developer-name">Zainab Shahzad</h3>
+                    <p className="developer-role">Frontend Developer</p>
+                    <p className="developer-desc">UI/UX design implementation and responsive frontend development</p>
+                    <div className="skills">
+                      <span className="skill-tag">React JS</span>
+                      <span className="skill-tag">Figma</span>
+                      <span className="skill-tag">UI & UX Engineer</span>
+                      <span className="skill-tag">Design and HCI</span>
+                    </div>
+                    <a 
+                      href="https://www.linkedin.com/in/zainab-shahzad-308451282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="linkedin-button"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                      LinkedIn Profile
+                    </a>
                   </div>
                 </div>
               </div>
@@ -546,13 +620,20 @@ const TeamComponent = () => {
           z-index: 2;
         }
         
+        .developers-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+          gap: 2.5rem;
+          max-width: 1200px;
+          width: 100%;
+          margin: 0 auto;
+        }
+        
         .developer-card {
           background: rgba(13, 17, 23, 0.85);
           border-radius: 12px;
           overflow: hidden;
           box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-          max-width: 500px;
-          width: 100%;
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           border: 1px solid rgba(0, 229, 255, 0.3);
           padding: 2rem;
@@ -566,29 +647,44 @@ const TeamComponent = () => {
         
         .developer-content {
           display: flex;
+          flex-direction: column;
           align-items: center;
-          gap: 2rem;
+          gap: 1.5rem;
+          text-align: center;
         }
         
         .developer-image-container {
-          width: 120px;
-          height: 120px;
+          width: 140px;
+          height: 140px;
           border-radius: 50%;
           overflow: hidden;
           flex-shrink: 0;
-          border: 3px solid rgba(0, 229, 255, 0.3);
-          box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+          border: 4px solid rgba(0, 229, 255, 0.4);
+          box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+          transition: all 0.4s ease;
+        }
+        
+        .developer-card:hover .developer-image-container {
+          border-color: rgba(155, 92, 255, 0.6);
+          box-shadow: 0 0 35px rgba(155, 92, 255, 0.5);
+          transform: scale(1.05);
         }
         
         .developer-image {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+        
+        .developer-card:hover .developer-image {
+          transform: scale(1.1);
         }
         
         .developer-info {
-          text-align: left;
+          text-align: center;
           flex: 1;
+          width: 100%;
         }
         
         .developer-name {
@@ -611,6 +707,38 @@ const TeamComponent = () => {
           margin-bottom: 1.5rem;
           line-height: 1.6;
           font-style: italic;
+          min-height: 48px;
+        }
+        
+        .linkedin-button {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.8rem;
+          padding: 0.8rem 1.5rem;
+          margin-top: 1rem;
+          background: linear-gradient(135deg, #0077b5, #005582);
+          color: white;
+          text-decoration: none;
+          border-radius: 10px;
+          font-weight: 600;
+          font-size: 0.95rem;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
+          border: 1px solid rgba(0, 119, 181, 0.5);
+        }
+        
+        .linkedin-button:hover {
+          background: linear-gradient(135deg, #005582, #003d5c);
+          transform: translateY(-3px);
+          box-shadow: 0 6px 20px rgba(0, 119, 181, 0.5);
+        }
+        
+        .linkedin-button svg {
+          transition: transform 0.3s ease;
+        }
+        
+        .linkedin-button:hover svg {
+          transform: scale(1.1);
         }
         
         .skills {
@@ -673,6 +801,11 @@ const TeamComponent = () => {
             text-align: center;
           }
           
+          .developers-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+          
           .developer-content {
             flex-direction: column;
             text-align: center;
@@ -684,6 +817,11 @@ const TeamComponent = () => {
           }
           
           .skills {
+            justify-content: center;
+          }
+          
+          .linkedin-button {
+            width: 100%;
             justify-content: center;
           }
         }

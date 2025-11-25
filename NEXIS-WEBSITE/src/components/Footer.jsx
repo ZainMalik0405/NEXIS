@@ -128,14 +128,12 @@ export default function Footer() {
   ];
 
   const researchAreas = [
-    "Quantum Computing",
-    "Neural Interfaces",
-    "Sustainable Energy",
-    "AI Ethics",
-    "Nanotechnology",
-    "Climate Modeling"
+    "Computer Networking",
+    "Internet of Things",
+    "AI-driven Smart Energy Systems",
+    "Machine Learning applications in Healthcare"
   ];
-
+  
   const handleLinkedInClick = () => {
     window.open('https://linkedin.com/in/saima-zafar-6b8b1016', '_blank');
   };

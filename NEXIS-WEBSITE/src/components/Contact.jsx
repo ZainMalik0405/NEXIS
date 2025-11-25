@@ -53,7 +53,7 @@ export default function Contact() {
     const encodedMessage = encodeURIComponent(whatsappMessage);
     
     // WhatsApp URL with phone number and message
-    const whatsappUrl = `https://wa.me/923311212303?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/923014878079?text=${encodedMessage}`;
     
     // Open WhatsApp in a new tab
     window.open(whatsappUrl, '_blank');
@@ -366,7 +366,7 @@ export default function Contact() {
                   mt: 1,
                 }}
               >
-                Your message will open in WhatsApp to send to +92 331 1212303
+                Your message will open in WhatsApp to send to Our Director
               </Typography>
             </Stack>
           </motion.form>

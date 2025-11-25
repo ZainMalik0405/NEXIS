@@ -34,7 +34,7 @@ const TeamComponent = () => {
       name: "Dr. Saima Zafar",
       role: "Director and Principal Investigator (PI)",
       expertise: "Leading research in Internet of Things, Healthcare Informatics, & Energy Informatics",
-      img: require('../assets/Dr. Saima Zafar.png'),
+      img: require('../assets/73 - Dr. Saima Zafar.JPG'),
     },
     {
       name: "Dr. Ali Hammad Akbar",
@@ -46,13 +46,13 @@ const TeamComponent = () => {
       name: "Dr. Muhammad Akmal",
       role: "Co-PI",
       expertise: "Biomedical applications of Artificial Intelligence and Machine Learning, Healthcare Informatics",
-      img: require('../assets/Dr. Muhammad Akmal.png'),
+      img: require('../assets/Dr. M. Akmal.JPG'),
     },
     {
       name: "Dr. Muhammad Naeem",
       role: "Co-PI",
       expertise: "Renewable Energy Systems, Energy Informatics",
-      img: require('../assets/Dr. Muhammad Naeem.png'),
+      img: require('../assets/Dr. M. Naeem.jpg'),
     },
   ];
 
@@ -63,14 +63,14 @@ const TeamComponent = () => {
       role: "Research Collaborator",
       expertise:
         "Associate Professor, Clarkson University, USA | Internet of Things, Machine Learning, Cyber Physical Systems",
-      img: require('../assets/Shafique Ahmed Chaudhry.png'),
+      img: require('../assets/Dr. Shafique Ahmed Chaudhry.jfif'),
     },
     {
       name: "Dr. Nasim Ullah",
       role: "Research Collaborator",
       expertise:
         "Renewable Energy Harvesting, Smart Grids, Hybrid Intelligent Transformers",
-      img: require('../assets/Nasim Ullah.png'),
+      img: require('../assets/Dr. Nasim Ullah.webp'),
     },
     {
       name: "Mr. Khalid Ijaz",
@@ -94,13 +94,13 @@ const TeamComponent = () => {
       name: "Mr. Umer Altaf",
       role: "PhD Student",
       expertise: "Machine Learning for Embedded Systems",
-      img: require('../assets/Umer Altaf.png'),
+      img: require('../assets/Umer Altaf.JPG'),
     },
     {
       name: "Ms. Sara Kiran",
       role: "PhD Student",
       expertise: "",
-      img: require('../assets/Sara Kiran.png'),
+      img: require('../assets/Sara Kiran.jfif'),
     },
   ];
 
@@ -116,13 +116,13 @@ const TeamComponent = () => {
       name: "Syed Faseeh Ul Hasan",
       role: "Web Developer & SEO specialist, CBS Automotive, Cambridge, UK",
       expertise: "Blockchain",
-      img: require('../assets/Syed Faseeh Ul Hasan.png'),
+      img: require('../assets/Syed Faseeh.jpeg'),
     },
     {
       name: "Chaudhry Fahad Ali",
       role: "PCP National Coordinator UNIDO",
       expertise: "Energy Management Systems",
-      img: require('../assets/Chaudhry Fahad Ali.png'),
+      img: require('../assets/Chaudhry Fahad Ali.jfif'),
     },
     {
       name: "Khushbakht Munir",
@@ -134,7 +134,7 @@ const TeamComponent = () => {
       name: "Hira Khalid",
       role: "Research Assistant, Sultan Qaboos University",
       expertise: "Free Space Optical Networks",
-      img: require('../assets/Hira Khalid.png'),
+      img: require('../assets/Hira Khalid.jfif'),
     },
     {
       name: "Usman Ayub",

@@ -28,28 +28,151 @@ const TeamComponent = () => {
     };
   }, []);
 
+ // --- UPDATED CORE TEAM ---
   const coreTeam = [
-    { name: "Dr. Saima Zafar", role: "Director and Principal Investigator (PI)", expertise: "Leading innovative research in computer networks", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" },
-    { name: "Dr. Ali Hammad Akbar", role: "Collaborator and Co-PI", expertise: "Bridging industry and academia through research", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" },
-    { name: "Dr. Muhammad Akmal", role: "Co-PI", expertise: "Transforming healthcare through informatics", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" },
-    { name: "Dr. Muhammad Naeem", role: "Co-PI", expertise: "Pioneering smart energy solutions", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" }
+    {
+      name: "Dr. Saima Zafar",
+      role: "Director and Principal Investigator (PI)",
+      expertise: "Leading research in Internet of Things, Healthcare Informatics, & Energy Informatics",
+      img: require('../assets/Dr. Saima Zafar.png'),
+    },
+    {
+      name: "Dr. Ali Hammad Akbar",
+      role: "Collaborator and Co PI",
+      expertise: "Wireless Sensor Networks, Emergency Management, Urban Sprawl",
+      img: require('../assets/Dr. Ali Hammad Akbar.png'),
+    },
+    {
+      name: "Dr. Muhammad Akmal",
+      role: "Co-PI",
+      expertise: "Biomedical applications of Artificial Intelligence and Machine Learning, Healthcare Informatics",
+      img: require('../assets/Dr. Muhammad Akmal.png'),
+    },
+    {
+      name: "Dr. Muhammad Naeem",
+      role: "Co-PI",
+      expertise: "Renewable Energy Systems, Energy Informatics",
+      img: require('../assets/Dr. Muhammad Naeem.png'),
+    },
   ];
 
+  // --- UPDATED RESEARCHERS ---
   const researchers = [
-    { name: "Mr. Khalid Ijaz", role: "Researcher", expertise: "Advancing computer vision in healthcare", img: "https://images.unsplash.com/photo-1508341591423-4347099e1f19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" },
-    { name: "Ms. Amna Ehsan", role: "PhD Student", expertise: "Exploring AI applications in networks", img: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" },
-    { name: "Hafiza Maliha Shabbir", role: "PhD Student", expertise: "Developing next-gen IoT systems", img: "https://images.unsplash.com/photo-1551836026-d5c8c5ab235e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" },
-    { name: "Ms. Abeer Bashir", role: "Researcher", expertise: "Innovating in data analytics", img: "https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" }
+    {
+      name: "Dr. Shafique Ahmed Chaudhry",
+      role: "Research Collaborator",
+      expertise:
+        "Associate Professor, Clarkson University, USA | Internet of Things, Machine Learning, Cyber Physical Systems",
+      img: require('../assets/Shafique Ahmed Chaudhry.png'),
+    },
+    {
+      name: "Dr. Nasim Ullah",
+      role: "Research Collaborator",
+      expertise:
+        "Renewable Energy Harvesting, Smart Grids, Hybrid Intelligent Transformers",
+      img: require('../assets/Nasim Ullah.png'),
+    },
+    {
+      name: "Mr. Khalid Ijaz",
+      role: "Researcher",
+      expertise: "Artificial Intelligence, Machine Learning, Computer Vision",
+      img: require('../assets/Khalid Ijaz.png'),
+    },
+    {
+      name: "Ms. Amna Ehsan",
+      role: "PhD Student",
+      expertise: "Energy Informatics",
+      img: "", // No picture, use first letter 'A'
+    },
+    {
+      name: "Ms. Abeer Bashir",
+      role: "PhD Student",
+      expertise: "Healthcare Informatics",
+      img: require('../assets/Abeer Bashir.png'),
+    },
+    {
+      name: "Mr. Umer Altaf",
+      role: "PhD Student",
+      expertise: "Machine Learning for Embedded Systems",
+      img: require('../assets/Umer Altaf.png'),
+    },
+    {
+      name: "Ms. Sara Kiran",
+      role: "PhD Student",
+      expertise: "",
+      img: require('../assets/Sara Kiran.png'),
+    },
   ];
 
+  // --- UPDATED STUDENT CONTRIBUTORS ---
   const students = [
-    { name: "Feroz Ahmed Mian", role: "Student Contributor", expertise: "Creating efficient network algorithms", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" },
-    { name: "Usman Ayub", role: "Student Contributor", expertise: "Designing responsive energy systems", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" },
-    { name: "Syed Faseeh Ul Hassan", role: "Student Contributor", expertise: "Optimizing healthcare data processes", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" },
-    { name: "Khushbakht Munir Bhatti", role: "Student Contributor", expertise: "Developing user-friendly interfaces", img: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" },
-    { name: "Hira Khalid", role: "Student Contributor", expertise: "Implementing secure network protocols", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" },
-    { name: "Chaudhry Fahad Ali", role: "Student Contributor", expertise: "Engineering robust system architectures", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" }
+    {
+      name: "Feroz Ahmed Mian",
+      role: "PhD Student, UMass Amherst",
+      expertise: "SoC-based implementation of Machine Learning algorithms",
+      img: require('../assets/Feroz Ahmed Mian.png'),
+    },
+    {
+      name: "Syed Faseeh Ul Hasan",
+      role: "Web Developer & SEO specialist, CBS Automotive, Cambridge, UK",
+      expertise: "Blockchain",
+      img: require('../assets/Syed Faseeh Ul Hasan.png'),
+    },
+    {
+      name: "Chaudhry Fahad Ali",
+      role: "PCP National Coordinator UNIDO",
+      expertise: "Energy Management Systems",
+      img: require('../assets/Chaudhry Fahad Ali.png'),
+    },
+    {
+      name: "Khushbakht Munir",
+      role: "Co-Chair, Women in Energy Pakistan",
+      expertise: "Blockchain and Internet of Things",
+      img: require('../assets/Khushbakht Munir.png'),
+    },
+    {
+      name: "Hira Khalid",
+      role: "Research Assistant, Sultan Qaboos University",
+      expertise: "Free Space Optical Networks",
+      img: require('../assets/Hira Khalid.png'),
+    },
+    {
+      name: "Usman Ayub",
+      role: "Research Student",
+      expertise: "Virtual Network Functions in Cloud Environment",
+      img: "", // No picture, use first letter 'U'
+    },
   ];
+
+  // --- IMAGE LOGIC ---
+  const renderImage = (img, name, size) => {
+    if (img) {
+      return (
+        <img src={typeof img === 'string' ? img : img.default} alt={name} className="member-image" />
+      );
+    }
+    const letter = name[0];
+    return (
+      <div
+        className="member-image placeholder"
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: '50%',
+          background: '#2c2c2c',
+          color: '#9b5cff',
+          fontWeight: 900,
+          fontSize: `${size / 2}px`,
+          border: '3px solid #9b5cff',
+        }}
+      >
+        {letter}
+      </div>
+    );
+  };
 
   const renderTeamMembers = (team) => {
     return team.map((member, index) => (
